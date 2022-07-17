@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.css">
+ <script src="node_modules/jquery/dist/jquery.js"></script>
+ <script src="/jquery-ui-1.12.1/jquery-ui.js"></script>
+ <script type="text/javascript">
+$(document).ready(function(){
+    var age="";
+    $('#birthdate').datepicker({
+        onSelect:function(value,ui){
+var today = new Date();
+age=today.getFullYear()-ui.selectedYear;
+$("#age").val(age);
+        },
+        changeMonth:true,
+        changeYear:true,
+        yearRange:"1960:2022",
+        maxDate:"-18y"
+        
+    })
+})
+</script>
+
+    <title>Document</title>
+</head>
+<body class="d-flex flex-row justify-content-start align-items-center">
+    
+    
+    <div class=" m-4 w-50">
+        <h1>Contact Me!</h1>
+        <form action="/" class="row g-3 mt-5" id="form">
+            <div class="col-md-8">
+                <label for="Name" class="form-label"> Name</label>
+                   <input type="text" class="form-control" id="Name">            
+            <p id="error-text" class="fs-6 pt-2"></p>
+                </div>
+                <div class="col-md-4">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" id='phone' class="form-control" maxlength="10">
+                </div>
+            <div class="col-md-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id='email' class="form-control" required>
+
+            </div>
+
+            
+           
+
+            <div class="col-md-6">
+                <label for="birthdate" class="form-label">Date of Birth</label>
+                <input type="text" id='birthdate' class="form-control" required>
+
+            </div>
+            <div class="col-md-6">
+                <label for="age" class="form-label">Age</label>
+                <input type="text" id='age' class="form-control" readonly>
+
+            </div>
+         <div class="row d-flex justify-content-center">   <button id="submit" type="submit" class="col-6 rounded-pill success   px-5 py-3 mt-5" style="background-color: aliceblue; border: 2px solid rgb(142, 193, 238);">SUBMIT</button>
+         </div>
+        </form>
+    </div>
+
+    <!-- LIST OF USERS -->
+
+    <div id="user" class="mx-5">
+<h2>LIST OF USER'S DATA</h2>
+<p id="user-data"></p>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

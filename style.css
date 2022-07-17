@@ -1,0 +1,19 @@
+body{
+    font-family: 'Roboto', sans-serif;
+
+}
+input:invalid:focus {
+
+border: 1px solid red;  
+}
+p{
+    color: red;
+}
+#user-data{
+    background-color: aliceblue;
+    border:2px solid rgb(142, 193, 238);
+    height: auto;
+    font-size: 2vw;
+    color: green;
+    width: auto;
+}
